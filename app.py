@@ -8,6 +8,10 @@ vectorizer = joblib.load("tfidf_vectorizer.pkl")
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return '✅ Mental Health Predictor is live!'
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
